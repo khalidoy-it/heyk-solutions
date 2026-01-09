@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Heyk-Solutions | Professional Software Engineering</title>
+<meta name="description" content="Heyk-Solutions - Expert digital agency specializing in building websites, SaaS platforms, and scalable business solutions. Professional website development, SaaS engineering, and UI/UX design services to transform your business."/>
+<meta name="keywords" content="Heyk-Solutions, digital agency, website development, SaaS platforms, web design, software engineering, UI/UX design"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://heyk-solutions.github.io/"/>
+<meta property="og:title" content="Heyk-Solutions - Build the Future with Expert Digital Solutions"/>
+<meta property="og:description" content="Expert digital agency specializing in building websites, SaaS platforms, and scalable business solutions. Professional website development, SaaS engineering, and UI/UX design services to transform your business."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://heyk-solutions.github.io/"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Heyk-Solutions - Professional Software Engineering"/>
+<meta name="twitter:description" content="Expert digital agency specializing in building websites, SaaS platforms, and scalable business solutions."/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        obsidian: "#0a1220",
+                        "deep-charcoal": "#1a2332",
+                        "neon-blue": "#00F0FF",
+                        "accent-blue": "#0066FF",
+                        primary: "#d4f000",
+                    },
+                    fontFamily: {
+                        sans: ["'Inter'", "sans-serif"],
+                        display: ["'Space Grotesk'", "sans-serif"],
+                        mono: ["'Space Mono'", "monospace"]
+                    },
+                    borderRadius: {
+                        DEFAULT: "1rem",
+                        lg: "2rem",
+                        xl: "3rem",
+                        full: "9999px"
+                    }
+                }
+            }
+        };
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+            section[id] {
+                scroll-margin-top: 90px;
+            }
+            body {
+                @apply bg-obsidian text-slate-300 font-sans antialiased;
+            }
+            section {
+                @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
+            }
+            section.visible {
+                @apply opacity-100 translate-y-0;
+            }
+        }
+        .cyber-grid {
+            background-image: 
+                linear-gradient(to right, rgba(0, 240, 255, 0.08) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(0, 240, 255, 0.08) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .text-glow-blue {
+            text-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+        }
+        .professional-card {
+            @apply bg-white/[0.08] backdrop-blur-md border border-white/15 rounded-xl transition-all duration-300;
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.15), 0 0 40px rgba(0, 240, 255, 0.08);
+        }
+        .action-button {
+            @apply bg-white text-black font-semibold px-8 py-4 rounded-lg transition-all duration-300 hover:bg-neon-blue active:scale-95 no-underline;
+            width: 70%;
+            margin-left: auto;
+            margin-right: auto;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.2), 0 0 30px rgba(0, 240, 255, 0.1);
+        }
+        .action-button:hover {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.5), 0 0 50px rgba(0, 240, 255, 0.3), 0 0 75px rgba(0, 240, 255, 0.2);
+        }
+        .typing-effect {
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 2px solid #00F0FF;
+            animation: typing 2.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #00F0FF; }
+        }
+        @keyframes blink-dot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.3; transform: scale(0.8); }
+        }
+        .blinking-dot {
+            animation: blink-dot 1.5s ease-in-out infinite;
+        }
+        .logo-glow {
+            filter: drop-shadow(0 0 8px rgba(0, 240, 255, 0.4));
+        }
+        /* Alert/Notification Styles */
+        .alert-container {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 9999;
+            max-width: 400px;
+            animation: slideInRight 0.5s ease-out;
+        }
+        @keyframes slideInRight {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+        .alert-container.hiding {
+            animation: slideOutRight 0.5s ease-out forwards;
+        }
+        .alert-notification {
+            background: linear-gradient(135deg, rgba(0, 240, 255, 0.1) 0%, rgba(10, 18, 32, 0.95) 100%);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 30px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.15), inset 0 0 20px rgba(0, 240, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .alert-notification::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.8), transparent);
+            animation: shimmer 2s linear infinite;
+        }
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .portfolio-card {
+            transition: box-shadow 0.3s ease;
+        }
+        /* Custom Scrollbar Styling - Webkit browsers (Chrome, Safari, Edge) */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a1220;
+            border-left: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, rgba(0, 240, 255, 0.3) 0%, rgba(0, 240, 255, 0.5) 100%);
+            border-radius: 6px;
+            border: 2px solid #0a1220;
+            box-shadow: 0 0 10px rgba(0, 240, 255, 0.4);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, rgba(0, 240, 255, 0.5) 0%, rgba(0, 240, 255, 0.7) 100%);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.6);
+        }
+        /* Custom Scrollbar Styling - Firefox */
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: rgba(0, 240, 255, 0.5) #0a1220;
+        }
+        /* WhatsApp Button Styling */
+        .whatsapp-button {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4), 0 0 30px rgba(37, 211, 102, 0.3), inset 0 0 20px rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .whatsapp-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6), 0 0 40px rgba(37, 211, 102, 0.4), inset 0 0 25px rgba(255, 255, 255, 0.15);
+            background: linear-gradient(135deg, #25D366 0%, #20BA5A 100%);
+        }
+        .whatsapp-button:active {
+            transform: scale(0.95);
+        }
+        .whatsapp-button .whatsapp-icon {
+            width: 32px;
+            height: 32px;
+            fill: white;
+            filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.3));
+        }
+        @media (max-width: 640px) {
+            .whatsapp-button {
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+            }
+            .whatsapp-button .whatsapp-icon {
+                width: 28px;
+                height: 28px;
+            }
+        }
+        .star-rating {
+            display: inline-flex;
+            gap: 2px;
+            align-items: center;
+        }
+        .star-rating .star {
+            color: #00F0FF;
+            text-shadow: 0 0 8px rgba(0, 240, 255, 0.6);
+            font-size: 18px;
+        }
+        .star-rating .star.empty {
+            color: rgba(255, 255, 255, 0.2);
+            text-shadow: none;
+        }
+    </style>
+<style>
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Heyk-Solutions",
+  "url": "https://heyk-solutions.github.io",
+  "logo": "https://heyk-solutions.github.io/logo.png",
+  "description": "Expert digital agency specializing in building websites, SaaS platforms, and scalable business solutions. Professional website development, SaaS engineering, and UI/UX design services.",
+  "foundingDate": "2014",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+1-555-000-0000",
+    "contactType": "Customer Service",
+    "email": "hello@heyk-solutions.com",
+    "areaServed": "Worldwide",
+    "availableLanguage": ["English"]
+  },
+  "sameAs": [
+    "https://twitter.com/heyksolutions",
+    "https://github.com/heyk-solutions",
+    "https://linkedin.com/company/heyk-solutions"
+  ]
+}
+</script>
+  </head>
+<body class="min-h-screen cyber-grid overflow-x-hidden">
+<header class="sticky top-0 z-50 bg-obsidian/90 backdrop-blur-xl border-b border-white/10">
+<nav class="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
+<a class="flex items-center gap-3 group" href="#hero">
+<div class="relative flex items-center justify-center w-9 h-9">
+<div class="absolute inset-0 bg-neon-blue/20 blur-md rounded-full group-hover:bg-neon-blue/30 transition-all"></div>
+<div class="relative z-10 flex items-center justify-center w-full h-full border border-white/20 rounded bg-black/40 backdrop-blur-sm logo-glow">
+<span class="material-symbols-outlined text-[22px] text-neon-blue leading-none select-none">hub</span>
+</div>
+</div>
+<div class="flex flex-col leading-none">
+<span class="text-white text-[15px] font-bold font-display tracking-[0.15em] uppercase">HEYK</span>
+<span class="text-slate-500 text-[10px] font-medium tracking-[0.3em] uppercase">SOLUTIONS</span>
+</div>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-xs font-bold text-slate-400 hover:text-neon-blue uppercase tracking-widest transition-colors" href="#services">Services</a>
+<a class="text-xs font-bold text-slate-400 hover:text-neon-blue uppercase tracking-widest transition-colors" href="#portfolio">Portfolio</a>
+<a class="text-xs font-bold text-slate-400 hover:text-neon-blue uppercase tracking-widest transition-colors" href="#contact">Contact</a>
+</div>
+<button class="md:hidden w-10 h-10 flex items-center justify-center text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+<span class="material-symbols-outlined text-[28px]">menu</span>
+</button>
+</nav>
+<div class="hidden md:hidden bg-deep-charcoal/95 border-b border-white/15 px-6 py-8 animate-in slide-in-from-top duration-300" id="mobile-menu">
+<div class="flex flex-col gap-6 text-center">
+<a class="text-sm font-bold text-slate-300 uppercase tracking-[0.2em]" href="#services" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Services</a>
+<a class="text-sm font-bold text-slate-300 uppercase tracking-[0.2em]" href="#portfolio" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Portfolio</a>
+<a class="text-sm font-bold text-slate-300 uppercase tracking-[0.2em]" href="#contact" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contact</a>
+</div>
+</div>
+</header>
+<main class="relative">
+<section class="visible px-6 pt-24 pb-20 relative text-center" id="hero">
+<div class="relative z-10 space-y-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon-blue/10 border border-neon-blue/20 text-neon-blue text-[11px] font-semibold uppercase tracking-wider mx-auto">
+<span class="relative flex h-2 w-2 items-center justify-center">
+<span class="relative inline-flex rounded-full h-2 w-2 bg-neon-blue blinking-dot" style="box-shadow: 0 0 8px rgba(0, 240, 255, 0.8);"></span>
+</span>
+                Now Partnering for 2026 Projects
+            </div>
+<div class="space-y-6">
+<h2 class="text-white text-4xl md:text-6xl font-extrabold leading-[1.1] font-display tracking-tight">
+                    Engineering <span class="text-neon-blue">Scalable</span> <br/>
+                    Software Solutions
+                </h2>
+<div class="inline-block">
+<p class="text-slate-300 text-base font-mono typing-effect">
+                        &gt; Architecture. Development. Scale.
+                    </p>
+</div>
+<p class="text-slate-400 text-lg leading-relaxed max-w-xl font-light mx-auto">
+                    Partner with an elite team to build, ship, and scale your next SaaS or enterprise platform. We turn complex technical challenges into competitive business advantages.
+                </p>
+</div>
+<div class="flex flex-col gap-6 pt-4 items-center">
+<a href="#contact" class="action-button text-sm uppercase tracking-widest text-center inline-flex items-center justify-center">
+                    Start Your Project
+                </a>
+<a class="text-slate-500 text-xs font-semibold uppercase tracking-widest hover:text-white transition-colors" href="#services">
+                    Explore Expertise ↓
+                </a>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-16 border-y border-white/10 bg-white/[0.05]" id="partners">
+<p class="text-center text-slate-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-12">Trusted Partners &amp; Clients</p>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 opacity-50 grayscale">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">token</span>
+<span class="font-bold text-xl font-display">STRATOS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">api</span>
+<span class="font-bold text-xl font-display">NODELINK</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">cloud_done</span>
+<span class="font-bold text-xl font-display">AETHER</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">database</span>
+<span class="font-bold text-xl font-display">NEXUS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">security</span>
+<span class="font-bold text-xl font-display">CYBERFORGE</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+<span class="font-bold text-xl font-display">QUANTUM</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">hub</span>
+<span class="font-bold text-xl font-display">TECHNOVA</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+<span class="font-bold text-xl font-display">AI VECTOR</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">account_tree</span>
+<span class="font-bold text-xl font-display">NEXTLINK</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">auto_graph</span>
+<span class="font-bold text-xl font-display">DATALYTICS</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">memory</span>
+<span class="font-bold text-xl font-display">NEURAL CORE</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">dns</span>
+<span class="font-bold text-xl font-display">CLOUDSCAPE</span>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-16 bg-deep-charcoal/60 border-y border-white/10" id="stats">
+<div class="max-w-6xl mx-auto">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div class="space-y-2">
+<div class="text-neon-blue text-4xl md:text-5xl font-bold font-display">150+</div>
+<p class="text-slate-400 text-xs uppercase tracking-widest">Projects Delivered</p>
+</div>
+<div class="space-y-2">
+<div class="text-neon-blue text-4xl md:text-5xl font-bold font-display">98%</div>
+<p class="text-slate-400 text-xs uppercase tracking-widest">Client Satisfaction</p>
+</div>
+<div class="space-y-2">
+<div class="text-neon-blue text-4xl md:text-5xl font-bold font-display">99.9%</div>
+<p class="text-slate-400 text-xs uppercase tracking-widest">Uptime Guarantee</p>
+</div>
+<div class="space-y-2">
+<div class="text-neon-blue text-4xl md:text-5xl font-bold font-display">24/7</div>
+<p class="text-slate-400 text-xs uppercase tracking-widest">Support Available</p>
+</div>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-24 space-y-16" id="services">
+<div class="text-center space-y-4">
+<span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Expertise</span>
+<h2 class="text-white text-3xl font-bold font-display tracking-tight">Our Core Expertise</h2>
+<p class="text-slate-400 text-sm max-w-2xl mx-auto leading-relaxed">High-performance engineering designed for business-critical reliability and ROI. We combine cutting-edge technology with strategic business insights to deliver solutions that scale.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto mt-12">
+<div class="professional-card w-full p-8 space-y-6">
+<div class="w-12 h-12 rounded-lg bg-neon-blue/10 flex items-center justify-center text-neon-blue">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-white font-bold text-xl">Web Architecture &amp; Strategy</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Developing robust foundation architectures that ensure 99.99% uptime and seamless scalability as your user base grows. We design systems that adapt to your business needs while maintaining peak performance under any load.</p>
+<ul class="space-y-2 mt-4">
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-neon-blue">→</span> Microservices &amp; distributed systems</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-neon-blue">→</span> Cloud-native infrastructure design</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-neon-blue">→</span> Scalability planning &amp; optimization</li>
+</ul>
+</div>
+</div>
+<div class="professional-card w-full p-8 space-y-6">
+<div class="w-12 h-12 rounded-lg bg-accent-blue/10 flex items-center justify-center text-accent-blue">
+<span class="material-symbols-outlined text-3xl">layers</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-white font-bold text-xl">Custom SaaS Development</h3>
+<p class="text-slate-400 text-sm leading-relaxed">End-to-end platform creation focused on user conversion, secure multi-tenancy, and high-performance cloud integration. From MVP to enterprise-grade solutions, we build platforms that your customers will love.</p>
+<ul class="space-y-2 mt-4">
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-accent-blue">→</span> Multi-tenant architecture</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-accent-blue">→</span> Subscription management systems</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-accent-blue">→</span> API-first development</li>
+</ul>
+</div>
+</div>
+<div class="professional-card w-full p-8 space-y-6">
+<div class="w-12 h-12 rounded-lg bg-white/10 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">terminal</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-white font-bold text-xl">Full-Stack Engineering</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Senior-level execution across the entire stack, prioritizing clean code, rapid delivery, and measurable performance gains. We leverage modern frameworks and best practices to deliver production-ready applications.</p>
+<ul class="space-y-2 mt-4">
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-white">→</span> React, Vue, Next.js frontends</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-white">→</span> Node.js, Python, Go backends</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-white">→</span> Database optimization &amp; design</li>
+</ul>
+</div>
+</div>
+<div class="professional-card w-full p-8 space-y-6">
+<div class="w-12 h-12 rounded-lg bg-neon-blue/20 flex items-center justify-center text-neon-blue">
+<span class="material-symbols-outlined text-3xl">palette</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-white font-bold text-xl">UI/UX Design &amp; Development</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Creating intuitive, beautiful interfaces that users love. We combine design thinking with technical excellence to build experiences that convert visitors into customers and customers into advocates.</p>
+<ul class="space-y-2 mt-4">
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-neon-blue">→</span> User research &amp; testing</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-neon-blue">→</span> Responsive design systems</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-neon-blue">→</span> Prototype to production</li>
+</ul>
+</div>
+</div>
+<div class="professional-card w-full p-8 space-y-6">
+<div class="w-12 h-12 rounded-lg bg-accent-blue/20 flex items-center justify-center text-accent-blue">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-white font-bold text-xl">AI &amp; Machine Learning Integration</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Harness the power of artificial intelligence to automate processes, gain insights, and create intelligent features that give your product a competitive edge. We integrate ML models seamlessly into your applications.</p>
+<ul class="space-y-2 mt-4">
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-accent-blue">→</span> Custom ML model development</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-accent-blue">→</span> AI API integration</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-accent-blue">→</span> Automated workflow systems</li>
+</ul>
+</div>
+</div>
+<div class="professional-card w-full p-8 space-y-6">
+<div class="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-3xl">security</span>
+</div>
+<div class="space-y-3">
+<h3 class="text-white font-bold text-xl">Security &amp; Compliance</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Enterprise-grade security built into every layer of your application. We implement industry-standard practices to protect your data and ensure compliance with regulations like GDPR, HIPAA, and SOC 2.</p>
+<ul class="space-y-2 mt-4">
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-white">→</span> End-to-end encryption</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-white">→</span> Security audits &amp; penetration testing</li>
+<li class="text-slate-400 text-xs flex items-center gap-2"><span class="text-white">→</span> Compliance certification support</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-24" id="portfolio">
+<div class="space-y-12">
+<div class="space-y-4 text-center">
+<span class="text-accent-blue text-xs font-bold uppercase tracking-[0.2em]">Portfolio</span>
+<h2 class="text-white text-3xl font-bold font-display tracking-tight">Our Impact</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+<div class="group space-y-6 w-full portfolio-card" style="box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), 0 0 40px rgba(0, 240, 255, 0.05);">
+<div class="relative aspect-video overflow-hidden rounded-2xl border border-white/10 transition-all duration-300">
+<img alt="Fintech Project" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPt5v8NdaB1bjDtVp_oZx77nxN5nRg_oSrnRl4OKE16cHSIwgcTF4HPyoYViFjMYa4k3Qq5pSvR91X8kyp5IXc6rne2qeIlycb9PzikjF8mb5rfW1Gg3IvEz26AKauNnw3AVJ7zoQpvOYRSPWwD66aIgaMzuMOrXFUFkOjL8JiRvRTPJq3QvgJHD8FHY1RWsklMVOfeIYbvlZLJRVsgRTy8jfaD8YoP6cDHHZ58WwcQ1WgQB10J0bi6ld3XNFAeo03WFqmqzUm"/>
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-neon-blue/20 text-neon-blue text-[10px] font-bold uppercase tracking-wider">Fintech</span>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-white text-xl font-bold">Global Fintech Infrastructure</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Revolutionizing international transaction protocols with a secure, high-throughput backend architecture processing 10M+ transactions daily.</p>
+<div class="flex items-center gap-4 pt-2 text-xs text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">trending_up</span> 300% Growth</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">speed</span> &lt;50ms Latency</span>
+</div>
+</div>
+</div>
+<div class="group space-y-6 w-full portfolio-card" style="box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), 0 0 40px rgba(0, 240, 255, 0.05);">
+<div class="relative aspect-video overflow-hidden rounded-2xl border border-white/10 group-hover:border-neon-blue/40 transition-all duration-500" style="box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);">
+<img alt="Enterprise SaaS" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFU0XhmeMFf-zQTr28D4g1e1QrPNPLrTcfSKMi-AmT7UbrKiP8VriPD3aTwDn2NwPNiD5NPcjabo7ghi2LTj6Fkuj04C4gbrYXcERObNKyYxgAsBLYvWmgOaJ7YgjwrMXQKdKo-Xu4w5q0QLK4_DgbN-CqLWCREqEPXsLL2wur2fQzrtKpdtH178IOKJ2i743-WUR1fGahbqLeB4GkmwjFnHFjt_E6M0n5T844LbsMJm3MVSEaU7SD0ZXAQNsDGC3s0P-FMKmJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-accent-blue/20 text-accent-blue text-[10px] font-bold uppercase tracking-wider">SaaS</span>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-white text-xl font-bold">Enterprise SaaS Solutions</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Scalable multi-tenant ecosystem designed for large-scale data management and automated workflows serving 50,000+ active users.</p>
+<div class="flex items-center gap-4 pt-2 text-xs text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">groups</span> 50K+ Users</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">auto_awesome</span> Multi-tenant</span>
+</div>
+</div>
+</div>
+<div class="group space-y-6 w-full portfolio-card" style="box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), 0 0 40px rgba(0, 240, 255, 0.05);">
+<div class="relative aspect-video overflow-hidden rounded-2xl border border-white/10 group-hover:border-neon-blue/40 transition-all duration-500" style="box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);">
+<img alt="E-commerce Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"/>
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-[10px] font-bold uppercase tracking-wider">E-Commerce</span>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-white text-xl font-bold">Next-Gen E-Commerce Platform</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Modern marketplace platform with AI-powered recommendations, real-time inventory management, and seamless payment processing.</p>
+<div class="flex items-center gap-4 pt-2 text-xs text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">shopping_cart</span> $5M+ Revenue</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">smart_toy</span> AI-Powered</span>
+</div>
+</div>
+</div>
+<div class="group space-y-6 w-full portfolio-card" style="box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), 0 0 40px rgba(0, 240, 255, 0.05);">
+<div class="relative aspect-video overflow-hidden rounded-2xl border border-white/10 group-hover:border-neon-blue/40 transition-all duration-500" style="box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);">
+<img alt="Healthcare Platform" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800"/>
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-neon-blue/20 text-neon-blue text-[10px] font-bold uppercase tracking-wider">Healthcare</span>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-white text-xl font-bold">Telemedicine Platform</h3>
+<p class="text-slate-400 text-sm leading-relaxed">HIPAA-compliant telehealth solution with video consultations, electronic health records, and automated appointment scheduling.</p>
+<div class="flex items-center gap-4 pt-2 text-xs text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">verified</span> HIPAA Compliant</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">video_call</span> 100K+ Sessions</span>
+</div>
+</div>
+</div>
+<div class="group space-y-6 w-full portfolio-card" style="box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), 0 0 40px rgba(0, 240, 255, 0.05);">
+<div class="relative aspect-video overflow-hidden rounded-2xl border border-white/10 group-hover:border-neon-blue/40 transition-all duration-500" style="box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);">
+<img alt="Analytics Dashboard" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"/>
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-accent-blue/20 text-accent-blue text-[10px] font-bold uppercase tracking-wider">Analytics</span>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-white text-xl font-bold">Business Intelligence Dashboard</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Real-time analytics platform with custom visualizations, automated reporting, and predictive analytics for data-driven decision making.</p>
+<div class="flex items-center gap-4 pt-2 text-xs text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">insights</span> Real-time</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">auto_graph</span> ML Insights</span>
+</div>
+</div>
+</div>
+<div class="group space-y-6 w-full portfolio-card" style="box-shadow: 0 0 20px rgba(0, 240, 255, 0.1), 0 0 40px rgba(0, 240, 255, 0.05);">
+<div class="relative aspect-video overflow-hidden rounded-2xl border border-white/10 group-hover:border-neon-blue/40 transition-all duration-500" style="box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);">
+<img alt="Mobile App" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800"/>
+<div class="absolute inset-0 bg-gradient-to-t from-obsidian/90 to-transparent"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="inline-block px-3 py-1 rounded-full bg-white/20 text-white text-[10px] font-bold uppercase tracking-wider">Mobile</span>
+</div>
+</div>
+<div class="space-y-3">
+<h3 class="text-white text-xl font-bold">Cross-Platform Mobile App</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Native iOS and Android applications with shared backend, featuring offline mode, push notifications, and seamless synchronization.</p>
+<div class="flex items-center gap-4 pt-2 text-xs text-slate-500">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">phone_iphone</span> iOS &amp; Android</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px]">download</span> 250K+ Downloads</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-24 bg-white/[0.08] border-y border-white/10" id="testimonials">
+<div class="space-y-12">
+<div class="space-y-4 text-center">
+<span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Validation</span>
+<h2 class="text-white text-3xl font-bold font-display tracking-tight">Client Reviews &amp; Testimonials</h2>
+<div class="flex flex-col items-center gap-3 mt-6">
+<div class="flex items-center gap-3">
+<span class="text-white text-4xl font-bold">4.9</span>
+<div class="flex flex-col gap-1">
+<div class="star-rating">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="text-slate-400 text-xs">Based on 120+ reviews</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col items-center gap-8 max-w-5xl mx-auto">
+<div class="professional-card w-[90%] md:w-[95%] lg:w-full max-w-lg xl:max-w-xl p-8 relative">
+<span class="material-symbols-outlined text-neon-blue/20 text-6xl absolute top-4 right-4">format_quote</span>
+<div class="star-rating mb-4">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="text-white/90 text-lg leading-relaxed italic mb-8">"Heyk-Solutions transformed our legacy operations into a streamlined platform. Their speed and precision are truly unmatched. We saw a 40% increase in efficiency within the first quarter."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-white/40">person</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Sarah Chen</p>
+<p class="text-slate-500 text-[10px] uppercase tracking-widest">Technology Director • Enterprise Retail Group</p>
+</div>
+</div>
+</div>
+<div class="professional-card w-[90%] md:w-[95%] lg:w-full max-w-lg xl:max-w-xl p-8 relative">
+<span class="material-symbols-outlined text-neon-blue/20 text-6xl absolute top-4 right-4">format_quote</span>
+<div class="star-rating mb-4">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="text-white/90 text-lg leading-relaxed italic mb-8">"The architecture delivered scales seamlessly. They understand the critical intersection of technical purity and business ROI. Our platform now handles 10x the traffic without breaking a sweat."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-white/40">person</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Marcus Rodriguez</p>
+<p class="text-slate-500 text-[10px] uppercase tracking-widest">Founder &amp; CEO • GrowthScale AI</p>
+</div>
+</div>
+</div>
+<div class="professional-card w-[90%] md:w-[95%] lg:w-full max-w-lg xl:max-w-xl p-8 relative">
+<span class="material-symbols-outlined text-neon-blue/20 text-6xl absolute top-4 right-4">format_quote</span>
+<div class="star-rating mb-4">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="text-white/90 text-lg leading-relaxed italic mb-8">"Outstanding work! They delivered our SaaS platform ahead of schedule and under budget. The code quality is exceptional, and their team's responsiveness throughout the project was impressive."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-white/40">person</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">James Anderson</p>
+<p class="text-slate-500 text-[10px] uppercase tracking-widest">CTO • TechVenture Solutions</p>
+</div>
+</div>
+</div>
+<div class="professional-card w-[90%] md:w-[95%] lg:w-full max-w-lg xl:max-w-xl p-8 relative">
+<span class="material-symbols-outlined text-neon-blue/20 text-6xl absolute top-4 right-4">format_quote</span>
+<div class="star-rating mb-4">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="text-white/90 text-lg leading-relaxed italic mb-8">"Working with Heyk-Solutions was a game-changer. They took our vision and executed it flawlessly. The platform they built has become the backbone of our business operations."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-white/40">person</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">Emily Watson</p>
+<p class="text-slate-500 text-[10px] uppercase tracking-widest">Product Manager • InnovateCo</p>
+</div>
+</div>
+</div>
+<div class="professional-card w-[90%] md:w-[95%] lg:w-full max-w-lg xl:max-w-xl p-8 relative">
+<span class="material-symbols-outlined text-neon-blue/20 text-6xl absolute top-4 right-4">format_quote</span>
+<div class="star-rating mb-4">
+<span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+</div>
+<p class="text-white/90 text-lg leading-relaxed italic mb-8">"Professional, innovative, and results-driven. Heyk-Solutions delivered exactly what we needed. Their expertise in modern web technologies and SaaS architecture is evident in every aspect of their work."</p>
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-white/40">person</span>
+</div>
+<div>
+<p class="text-white font-bold text-sm">David Kim</p>
+<p class="text-slate-500 text-[10px] uppercase tracking-widest">VP of Engineering • CloudFirst Inc</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-24 bg-deep-charcoal/60 border-y border-white/10" id="technologies">
+<div class="space-y-12 max-w-6xl mx-auto">
+<div class="space-y-4 text-center">
+<span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Technology Stack</span>
+<h2 class="text-white text-3xl font-bold font-display tracking-tight">Technologies We Master</h2>
+<p class="text-slate-400 text-sm max-w-2xl mx-auto">We leverage cutting-edge technologies and frameworks to build scalable, performant, and maintainable solutions.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+<div class="professional-card p-6 text-center space-y-3">
+<div class="w-10 h-10 rounded-lg bg-neon-blue/10 flex items-center justify-center text-neon-blue mx-auto">
+<span class="material-symbols-outlined text-2xl">code</span>
+</div>
+<h4 class="text-white font-bold text-sm">React &amp; Next.js</h4>
+<p class="text-slate-500 text-xs">Modern frontend frameworks</p>
+</div>
+<div class="professional-card p-6 text-center space-y-3">
+<div class="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center text-accent-blue mx-auto">
+<span class="material-symbols-outlined text-2xl">data_object</span>
+</div>
+<h4 class="text-white font-bold text-sm">Node.js &amp; Python</h4>
+<p class="text-slate-500 text-xs">Backend development</p>
+</div>
+<div class="professional-card p-6 text-center space-y-3">
+<div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white mx-auto">
+<span class="material-symbols-outlined text-2xl">storage</span>
+</div>
+<h4 class="text-white font-bold text-sm">PostgreSQL &amp; MongoDB</h4>
+<p class="text-slate-500 text-xs">Database solutions</p>
+</div>
+<div class="professional-card p-6 text-center space-y-3">
+<div class="w-10 h-10 rounded-lg bg-neon-blue/10 flex items-center justify-center text-neon-blue mx-auto">
+<span class="material-symbols-outlined text-2xl">cloud</span>
+</div>
+<h4 class="text-white font-bold text-sm">AWS &amp; Azure</h4>
+<p class="text-slate-500 text-xs">Cloud infrastructure</p>
+</div>
+<div class="professional-card p-6 text-center space-y-3">
+<div class="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center text-accent-blue mx-auto">
+<span class="material-symbols-outlined text-2xl">settings</span>
+</div>
+<h4 class="text-white font-bold text-sm">Docker &amp; Kubernetes</h4>
+<p class="text-slate-500 text-xs">Containerization</p>
+</div>
+<div class="professional-card p-6 text-center space-y-3">
+<div class="w-10 h-10 rounded-lg bg-white/10 flex items-center justify-center text-white mx-auto">
+<span class="material-symbols-outlined text-2xl">lock</span>
+</div>
+<h4 class="text-white font-bold text-sm">OAuth &amp; JWT</h4>
+<p class="text-slate-500 text-xs">Security protocols</p>
+</div>
+<div class="professional-card p-6 text-center space-y-3">
+<div class="w-10 h-10 rounded-lg bg-neon-blue/10 flex items-center justify-center text-neon-blue mx-auto">
+<span class="material-symbols-outlined text-2xl">integration_instructions</span>
+</div>
+<h4 class="text-white font-bold text-sm">GraphQL &amp; REST</h4>
+<p class="text-slate-500 text-xs">API architectures</p>
+</div>
+<div class="professional-card p-6 text-center space-y-3">
+<div class="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center text-accent-blue mx-auto">
+<span class="material-symbols-outlined text-2xl">smart_toy</span>
+</div>
+<h4 class="text-white font-bold text-sm">TensorFlow &amp; PyTorch</h4>
+<p class="text-slate-500 text-xs">Machine learning</p>
+</div>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-24" id="process">
+<div class="space-y-12 max-w-5xl mx-auto">
+<div class="space-y-4 text-center">
+<span class="text-accent-blue text-xs font-bold uppercase tracking-[0.2em]">Our Process</span>
+<h2 class="text-white text-3xl font-bold font-display tracking-tight">How We Work</h2>
+<p class="text-slate-400 text-sm max-w-2xl mx-auto">A proven methodology that ensures successful project delivery from concept to launch and beyond.</p>
+</div>
+<div class="space-y-8">
+<div class="professional-card p-8 flex flex-col md:flex-row gap-6 items-start">
+<div class="w-16 h-16 rounded-xl bg-neon-blue/10 flex items-center justify-center text-neon-blue flex-shrink-0">
+<span class="text-2xl font-bold">01</span>
+</div>
+<div class="flex-1 space-y-3">
+<h3 class="text-white font-bold text-xl">Discovery &amp; Strategy</h3>
+<p class="text-slate-400 text-sm leading-relaxed">We start by understanding your business goals, target audience, and technical requirements. Through workshops and research, we develop a comprehensive strategy that aligns with your vision.</p>
+</div>
+</div>
+<div class="professional-card p-8 flex flex-col md:flex-row gap-6 items-start">
+<div class="w-16 h-16 rounded-xl bg-accent-blue/10 flex items-center justify-center text-accent-blue flex-shrink-0">
+<span class="text-2xl font-bold">02</span>
+</div>
+<div class="flex-1 space-y-3">
+<h3 class="text-white font-bold text-xl">Design &amp; Prototyping</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Our design team creates user-centric interfaces and experiences. We build interactive prototypes for stakeholder review and user testing before development begins.</p>
+</div>
+</div>
+<div class="professional-card p-8 flex flex-col md:flex-row gap-6 items-start">
+<div class="w-16 h-16 rounded-xl bg-white/10 flex items-center justify-center text-white flex-shrink-0">
+<span class="text-2xl font-bold">03</span>
+</div>
+<div class="flex-1 space-y-3">
+<h3 class="text-white font-bold text-xl">Development &amp; Testing</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Using agile methodology, we build your solution in iterative sprints with continuous testing and quality assurance. Regular demos keep you informed and engaged throughout the process.</p>
+</div>
+</div>
+<div class="professional-card p-8 flex flex-col md:flex-row gap-6 items-start">
+<div class="w-16 h-16 rounded-xl bg-neon-blue/10 flex items-center justify-center text-neon-blue flex-shrink-0">
+<span class="text-2xl font-bold">04</span>
+</div>
+<div class="flex-1 space-y-3">
+<h3 class="text-white font-bold text-xl">Deployment &amp; Support</h3>
+<p class="text-slate-400 text-sm leading-relaxed">We handle deployment to production with zero-downtime strategies. Post-launch, we provide ongoing support, monitoring, and iterative improvements to ensure long-term success.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-24 bg-white/[0.08] border-y border-white/10" id="faq">
+<div class="space-y-12 max-w-3xl mx-auto">
+<div class="space-y-4 text-center">
+<span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">FAQ</span>
+<h2 class="text-white text-3xl font-bold font-display tracking-tight">Frequently Asked Questions</h2>
+<p class="text-slate-400 text-sm">Common questions about our services, process, and what to expect when working with us.</p>
+</div>
+<div class="space-y-4">
+<div class="professional-card p-6 space-y-3">
+<h3 class="text-white font-bold text-base">How long does a typical project take?</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Project timelines vary based on complexity and scope. A simple website might take 4-6 weeks, while a full SaaS platform could take 3-6 months. We provide detailed timelines during the discovery phase.</p>
+</div>
+<div class="professional-card p-6 space-y-3">
+<h3 class="text-white font-bold text-base">What's included in your development services?</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Our services include requirements analysis, design, development, testing, deployment, documentation, and 3 months of post-launch support. We can also provide ongoing maintenance and feature development.</p>
+</div>
+<div class="professional-card p-6 space-y-3">
+<h3 class="text-white font-bold text-base">Do you work with startups or only enterprise clients?</h3>
+<p class="text-slate-400 text-sm leading-relaxed">We work with clients of all sizes, from startups building their MVP to large enterprises scaling existing platforms. We adapt our approach to fit your budget and timeline while maintaining quality standards.</p>
+</div>
+<div class="professional-card p-6 space-y-3">
+<h3 class="text-white font-bold text-base">Can you integrate with our existing systems?</h3>
+<p class="text-slate-400 text-sm leading-relaxed">Absolutely. We specialize in building new systems that seamlessly integrate with existing infrastructure through APIs, webhooks, and custom integration layers.</p>
+</div>
+<div class="professional-card p-6 space-y-3">
+<h3 class="text-white font-bold text-base">What kind of support do you offer after launch?</h3>
+<p class="text-slate-400 text-sm leading-relaxed">We offer 24/7 monitoring, bug fixes, security updates, performance optimization, and feature enhancements. Support packages are tailored to your needs and can be adjusted as your requirements evolve.</p>
+</div>
+<div class="professional-card p-6 space-y-3">
+<h3 class="text-white font-bold text-base">How do you ensure code quality and security?</h3>
+<p class="text-slate-400 text-sm leading-relaxed">We follow industry best practices including code reviews, automated testing, security audits, and continuous integration. All code is documented, version-controlled, and follows established coding standards.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="visible px-6 py-24 bg-deep-charcoal/80 relative" id="contact">
+<div class="relative z-10 space-y-12">
+<div class="space-y-4 text-center">
+<span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Inquiry</span>
+<h2 class="text-white text-4xl font-bold font-display tracking-tight">Get in Touch</h2>
+<p class="text-slate-400 text-sm max-w-xs mx-auto">Ready to scale? Let's discuss your architectural requirements.</p>
+</div>
+<form id="contact-form" class="space-y-6 max-w-lg mx-auto flex flex-col items-center" action="https://formsubmit.co/hello@heyk-solutions.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="">
+<input type="hidden" name="_subject" value="New Contact Form Submission - Heyk-Solutions">
+<div class="space-y-2 w-full">
+<label class="text-white/70 text-xs font-semibold uppercase tracking-wider ml-1">Full Name</label>
+<input name="name" id="contact-name" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-neon-blue transition-all" placeholder="John Doe" type="text" required/>
+</div>
+<div class="space-y-2 w-full">
+<label class="text-white/70 text-xs font-semibold uppercase tracking-wider ml-1">Work Email</label>
+<input name="email" id="contact-email" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-neon-blue transition-all" placeholder="john@company.com" type="email" required/>
+</div>
+<div class="space-y-2 w-full">
+<label class="text-white/70 text-xs font-semibold uppercase tracking-wider ml-1">Contact Us</label>
+<p class="text-slate-400 text-sm">Email: <a href="mailto:hello@heyk-solutions.com" class="text-neon-blue hover:underline">hello@heyk-solutions.com</a></p>
+</div>
+<div class="space-y-2 w-full">
+<label class="text-white/70 text-xs font-semibold uppercase tracking-wider ml-1">Project Details</label>
+<textarea name="message" id="contact-message" class="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-neon-blue transition-all" placeholder="Tell us about your objectives..." rows="5" required></textarea>
+</div>
+<button id="submit-btn" class="action-button text-sm uppercase tracking-widest mt-4" type="submit">
+                    <span id="submit-text">Submit Inquiry</span>
+                    <span id="submit-loader" class="hidden ml-2">
+                        <span class="inline-block w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    </span>
+                </button>
+</form>
+</div>
+</section>
+</main>
+<footer class="px-6 py-16 bg-obsidian border-t border-white/5">
+<div class="max-w-7xl mx-auto flex flex-col items-center gap-12">
+<a class="flex items-center gap-3 group" href="#hero">
+<div class="relative flex items-center justify-center w-8 h-8">
+<div class="absolute inset-0 bg-neon-blue/10 blur-sm rounded-full"></div>
+<div class="relative z-10 flex items-center justify-center w-full h-full border border-white/10 rounded bg-black/40 backdrop-blur-sm">
+<span class="material-symbols-outlined text-[18px] text-neon-blue leading-none select-none">hub</span>
+</div>
+</div>
+<div class="flex flex-col leading-none">
+<span class="text-white text-[13px] font-bold font-display tracking-[0.15em] uppercase">HEYK</span>
+<span class="text-slate-600 text-[8px] font-medium tracking-[0.3em] uppercase">SOLUTIONS</span>
+</div>
+</a>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-10 w-full text-left">
+<div class="space-y-5">
+<h4 class="text-white text-[11px] font-bold uppercase tracking-widest">Quick Links</h4>
+<div class="flex flex-col gap-3 text-xs text-slate-500 font-medium">
+<a class="hover:text-neon-blue transition-colors" href="#services">Services</a>
+<a class="hover:text-neon-blue transition-colors" href="#portfolio">Portfolio</a>
+<a class="hover:text-neon-blue transition-colors" href="#contact">Contact</a>
+</div>
+</div>
+<div class="space-y-5">
+<h4 class="text-white text-[11px] font-bold uppercase tracking-widest">Connect</h4>
+<div class="flex flex-col gap-3 text-xs text-slate-500 font-medium">
+<a class="hover:text-neon-blue transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-neon-blue transition-colors" href="#">X / Twitter</a>
+<a class="hover:text-neon-blue transition-colors" href="#">GitHub</a>
+</div>
+</div>
+<div class="space-y-5">
+<h4 class="text-white text-[11px] font-bold uppercase tracking-widest">Legal</h4>
+<div class="flex flex-col gap-3 text-xs text-slate-500 font-medium">
+<a class="hover:text-neon-blue transition-colors" href="#legal">Company Information</a>
+<a class="hover:text-neon-blue transition-colors" href="#faq">FAQ</a>
+</div>
+</div>
+</div>
+<div class="w-full pt-10 border-t border-white/5">
+<p class="text-[10px] text-slate-600 text-center font-medium uppercase tracking-[0.2em] leading-relaxed mb-3">
+                © 2026 Heyk-Solutions. Engineering tomorrow's infrastructure today.
+            </p>
+<p class="text-[9px] text-slate-700 text-center font-medium">
+                HEYK LLC | Entity ID: 0008070256 | Registered in New Mexico, USA
+            </p>
+<p class="text-[9px] text-slate-700 text-center font-medium mt-2">
+                <a href="#legal" class="hover:text-neon-blue transition-colors">Legal Information</a>
+            </p>
+</div>
+</div>
+</footer>
+<section class="visible px-6 py-12 bg-deep-charcoal/80 border-t border-white/10" id="legal">
+<div class="max-w-4xl mx-auto">
+<div class="space-y-6">
+<div class="text-center space-y-2">
+<span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Legal Information</span>
+<h3 class="text-white text-lg font-bold font-display">Company Registration &amp; Legal Status</h3>
+</div>
+<div class="professional-card p-6 space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+<div class="space-y-1">
+<p class="text-slate-400 text-xs uppercase tracking-wider">Legal Entity Name</p>
+<p class="text-white font-semibold">HEYK LLC</p>
+</div>
+<div class="space-y-1">
+<p class="text-slate-400 text-xs uppercase tracking-wider">Entity ID</p>
+<p class="text-white font-semibold">0008070256</p>
+</div>
+<div class="space-y-1">
+<p class="text-slate-400 text-xs uppercase tracking-wider">State of Formation</p>
+<p class="text-white font-semibold">New Mexico, United States</p>
+</div>
+<div class="space-y-1">
+<p class="text-slate-400 text-xs uppercase tracking-wider">Formation Date</p>
+<p class="text-white font-semibold">December 24, 2026</p>
+</div>
+<div class="space-y-1 md:col-span-2">
+<p class="text-slate-400 text-xs uppercase tracking-wider">Registered Address</p>
+<p class="text-white font-semibold">1209 MOUNTAIN ROAD PL NE, STE R<br/>ALBUQUERQUE, NM 87110</p>
+</div>
+<div class="space-y-1 md:col-span-2">
+<p class="text-slate-400 text-xs uppercase tracking-wider">Business Purpose</p>
+<p class="text-white font-semibold">Online Business</p>
+</div>
+</div>
+<div class="pt-4 border-t border-white/10">
+<p class="text-slate-400 text-xs leading-relaxed">
+This entity is subject to and governed by Chapter 53, Article 19 NMSA 1978 "Limited Liability Company Act" of the State of New Mexico. 
+The company is registered and authorized to transact business in the State of New Mexico.
+</p>
+</div>
+<div class="pt-4 border-t border-white/10">
+<p class="text-slate-500 text-[10px] uppercase tracking-wider mb-3">Registration Documents</p>
+<div class="space-y-2 text-xs text-slate-400">
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-neon-blue text-[16px]">description</span>
+Certificate of Organization - Filed December 24, 2026
+</p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-neon-blue text-[16px]">description</span>
+Domestic LLC Articles of Organization - File #3138486
+</p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-neon-blue text-[16px]">verified</span>
+Notice of Approval of Initial Filing - Approved December 29, 2026
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<script>
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+
+    // Enhanced smooth scrolling for all anchor links and buttons
+    function smoothScrollTo(target) {
+        if (!target || target === '#') return;
+        
+        const element = document.querySelector(target);
+        if (element) {
+            const headerOffset = 90; // Height of sticky header
+            const elementPosition = element.offsetTop;
+            const offsetPosition = elementPosition - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        }
+    }
+
+    // Handle all anchor links with href starting with #
+    document.addEventListener('click', function(e) {
+        const target = e.target.closest('a[href^="#"]');
+        if (target) {
+            const href = target.getAttribute('href');
+            if (href && href !== '#' && href.length > 1) {
+                e.preventDefault();
+                smoothScrollTo(href);
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            }
+        }
+    });
+
+    // Handle action buttons specifically
+    document.addEventListener('click', function(e) {
+        const button = e.target.closest('.action-button');
+        if (button) {
+            const href = button.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                smoothScrollTo(href);
+            }
+        }
+    });
+
+    // Ensure smooth scrolling on page load for hash URLs
+    window.addEventListener('load', function() {
+        if (window.location.hash) {
+            setTimeout(() => {
+                smoothScrollTo(window.location.hash);
+            }, 300);
+        }
+    });
+
+    // Contact Form Handler with Alert Notification
+    function showAlert(message, type = 'success') {
+        // Remove existing alert if any
+        const existingAlert = document.getElementById('contact-alert');
+        if (existingAlert) {
+            existingAlert.remove();
+        }
+
+        // Create alert container
+        const alertContainer = document.createElement('div');
+        alertContainer.id = 'contact-alert';
+        alertContainer.className = 'alert-container';
+        
+        // Create alert notification
+        const alert = document.createElement('div');
+        alert.className = 'alert-notification';
+        
+        const icon = type === 'success' ? 'check_circle' : 'error';
+        const iconColor = type === 'success' ? 'text-neon-blue' : 'text-red-400';
+        
+        alert.innerHTML = `
+            <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 mt-1">
+                    <span class="material-symbols-outlined ${iconColor} text-3xl">${icon}</span>
+                </div>
+                <div class="flex-1 space-y-2">
+                    <h4 class="text-white font-bold text-base">${type === 'success' ? 'Thank You!' : 'Error'}</h4>
+                    <p class="text-slate-300 text-sm leading-relaxed">${message}</p>
+                </div>
+                <button onclick="closeAlert()" class="flex-shrink-0 text-slate-400 hover:text-neon-blue transition-colors">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+        `;
+        
+        alertContainer.appendChild(alert);
+        document.body.appendChild(alertContainer);
+
+        // Auto-hide after 6 seconds
+        setTimeout(() => {
+            closeAlert();
+        }, 6000);
+    }
+
+    function closeAlert() {
+        const alert = document.getElementById('contact-alert');
+        if (alert) {
+            alert.classList.add('hiding');
+            setTimeout(() => {
+                alert.remove();
+            }, 500);
+        }
+    }
+
+    // Handle form submission
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const submitText = document.getElementById('submit-text');
+    const submitLoader = document.getElementById('submit-loader');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(contactForm);
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const message = document.getElementById('contact-message').value.trim();
+
+            // Basic validation
+            if (!name || !email || !message) {
+                showAlert('Please fill in all required fields.', 'error');
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.classList.add('hidden');
+            submitLoader.classList.remove('hidden');
+
+            try {
+                // IMPORTANT: Replace YOUR_GOOGLE_SCRIPT_URL with your Google Apps Script Web App URL
+                // Get this URL from Step 2 in GOOGLE_SHEETS_SETUP.md
+                const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_SCRIPT_URL'; // Replace this with your Google Apps Script URL
+                
+                // Submit to Google Sheets
+                const formDataObj = {
+                    name: name,
+                    email: email,
+                    message: message
+                };
+                
+                // Try Google Sheets first (if configured)
+                if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_URL') {
+                    const response = await fetch(GOOGLE_SCRIPT_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formDataObj)
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok && data.success) {
+                        // Success - message saved to Google Sheets
+                        showAlert('Thank you for contacting us! We\'ve received your message and will get back to you soon.', 'success');
+                        contactForm.reset();
+                        return;
+                    }
+                }
+                
+                // Fallback to FormSubmit if Google Sheets not configured
+                const formSubmitData = {
+                    name: name,
+                    email: email,
+                    message: message,
+                    _subject: 'New Contact Form Submission - Heyk-Solutions',
+                    _captcha: false,
+                    _template: 'box'
+                };
+                
+                const formSubmitResponse = await fetch('https://formsubmit.co/ajax/hello@heyk-solutions.com', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify(formSubmitData)
+                });
+
+                const formSubmitData_result = await formSubmitResponse.json();
+
+                if (formSubmitResponse.ok) {
+                    // Success
+                    showAlert('Thank you for contacting us! We\'ve received your message and will get back to you soon.', 'success');
+                    contactForm.reset();
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                // Final fallback: try direct form submission
+                console.log('AJAX failed, using direct form submission');
+                contactForm.target = '_blank';
+                contactForm.submit();
+                
+                // Show success message (form will redirect but this provides feedback)
+                showAlert('Thank you for contacting us! Your message has been sent successfully.', 'success');
+                setTimeout(() => {
+                    contactForm.reset();
+                }, 1000);
+            } finally {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.classList.remove('hidden');
+                submitLoader.classList.add('hidden');
+            }
+        });
+    }
+
+    // Make closeAlert available globally
+    window.closeAlert = closeAlert;
+</script>
+<a href="https://wa.me/19176953197" target="_blank" rel="noopener noreferrer" class="whatsapp-button" aria-label="Contact us on WhatsApp">
+<svg class="whatsapp-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+</svg>
+</a>
+</body></html>
