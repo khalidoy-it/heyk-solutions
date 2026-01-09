@@ -1,0 +1,11 @@
+{
+  "name": "heyk-solutions",
+  "version": "1.0.0",
+  "description": "Heyk-Solutions professional website",
+  "scripts": {
+    "start": "npx serve -s . -l $PORT"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
