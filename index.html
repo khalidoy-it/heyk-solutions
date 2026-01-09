@@ -1039,7 +1039,7 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
 
     // Set default animation properties - professional and subtle
     gsap.defaults({
-        duration: 0.7,
+        duration: 0.3,
         ease: "power2.out"
     });
 
@@ -1051,7 +1051,7 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
             },
             {
                 opacity: 1,
-                duration: 0.8,
+                duration: 0.3,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: section,
@@ -1065,36 +1065,36 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
     // Professional hero section animations - subtle fade-ins
     gsap.from('.hero-badge', {
         opacity: 0,
-        duration: 0.6,
-        delay: 0.1,
+        duration: 0.3,
+        delay: 0.05,
         ease: "power2.out"
     });
 
     gsap.from('.hero-title', {
         opacity: 0,
-        duration: 0.8,
-        delay: 0.2,
+        duration: 0.3,
+        delay: 0.1,
         ease: "power2.out"
     });
 
     gsap.from('.hero-subtitle', {
         opacity: 0,
-        duration: 0.8,
-        delay: 0.4,
+        duration: 0.3,
+        delay: 0.15,
         ease: "power2.out"
     });
 
     gsap.from('.hero-description', {
         opacity: 0,
-        duration: 0.8,
-        delay: 0.5,
+        duration: 0.3,
+        delay: 0.2,
         ease: "power2.out"
     });
 
     gsap.from('.hero-buttons', {
         opacity: 0,
-        duration: 0.8,
-        delay: 0.6,
+        duration: 0.3,
+        delay: 0.25,
         ease: "power2.out"
     });
 
@@ -1106,8 +1106,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
             },
             {
                 opacity: 1,
-                duration: 0.6,
-                delay: index * 0.08,
+                duration: 0.3,
+                delay: index * 0.03,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: card,
@@ -1126,8 +1126,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
             },
             {
                 opacity: 1,
-                duration: 0.7,
-                delay: index * 0.1,
+                duration: 0.3,
+                delay: index * 0.05,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: card,
@@ -1154,8 +1154,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
                 },
                 {
                     opacity: 1,
-                    duration: 0.6,
-                    delay: index * 0.1,
+                    duration: 0.3,
+                    delay: index * 0.05,
                     ease: "power2.out",
                     scrollTrigger: {
                         trigger: stat,
@@ -1169,8 +1169,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
             gsap.fromTo({ value: 0 },
                 {
                     value: numericValue,
-                    duration: 1.5,
-                    delay: index * 0.1 + 0.2,
+                    duration: 0.8,
+                    delay: index * 0.05 + 0.1,
                     ease: "power2.out",
                     onUpdate: function() {
                         number.textContent = Math.round(this.targets()[0].value) + suffix;
@@ -1192,8 +1192,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
             },
             {
                 opacity: 1,
-                duration: 0.7,
-                delay: index * 0.15,
+                duration: 0.3,
+                delay: index * 0.08,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: card,
@@ -1212,8 +1212,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
             },
             {
                 opacity: 1,
-                duration: 0.6,
-                delay: index * 0.06,
+                duration: 0.3,
+                delay: index * 0.03,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: card,
@@ -1232,8 +1232,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
             },
             {
                 opacity: 1,
-                duration: 0.7,
-                delay: index * 0.1,
+                duration: 0.3,
+                delay: index * 0.05,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: card,
@@ -1252,8 +1252,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
             },
             {
                 opacity: 1,
-                duration: 0.6,
-                delay: index * 0.08,
+                duration: 0.3,
+                delay: index * 0.04,
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: card,
@@ -1267,7 +1267,7 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
     // Professional partners logos - subtle fade
     gsap.from('#partners .flex', {
         opacity: 0,
-        duration: 0.8,
+        duration: 0.3,
         ease: "power2.out",
         scrollTrigger: {
             trigger: '#partners',
@@ -1316,7 +1316,7 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
     document.querySelectorAll('.action-button').forEach(button => {
         gsap.from(button, {
             opacity: 0,
-            duration: 0.6,
+            duration: 0.3,
             ease: "power2.out",
             scrollTrigger: {
                 trigger: button,
@@ -1329,8 +1329,8 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
     // Professional WhatsApp button - subtle fade
     gsap.from('.whatsapp-button', {
         opacity: 0,
-        duration: 0.8,
-        delay: 1,
+        duration: 0.3,
+        delay: 0.5,
         ease: "power2.out"
     });
 
