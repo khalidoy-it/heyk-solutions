@@ -1342,6 +1342,110 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
         }
     });
 
+    // Creative testimonials cards with slide and reveal
+    gsap.utils.toArray('#testimonials .professional-card').forEach((card, index) => {
+        const isEven = index % 2 === 0;
+        
+        gsap.fromTo(card,
+            {
+                opacity: 0,
+                x: isEven ? -150 : 150,
+                y: 80,
+                rotation: isEven ? -10 : 10,
+                scale: 0.8,
+                filter: "blur(15px)"
+            },
+            {
+                opacity: 1,
+                x: 0,
+                y: 0,
+                rotation: 0,
+                scale: 1,
+                filter: "blur(0px)",
+                duration: 1.4,
+                delay: index * 0.2,
+                ease: "power4.out",
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 85%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+
+        // Quote icon animation
+        const quoteIcon = card.querySelector('.material-symbols-outlined');
+        if (quoteIcon && quoteIcon.textContent.includes('quote')) {
+            gsap.fromTo(quoteIcon,
+                {
+                    opacity: 0,
+                    scale: 0,
+                    rotation: 180
+                },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    rotation: 0,
+                    duration: 1,
+                    delay: index * 0.2 + 0.5,
+                    ease: "back.out(2)",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%"
+                    }
+                }
+            );
+        }
+
+        // Stars animation
+        const stars = card.querySelectorAll('.star');
+        stars.forEach((star, starIndex) => {
+            gsap.fromTo(star,
+                {
+                    opacity: 0,
+                    scale: 0,
+                    rotation: -180
+                },
+                {
+                    opacity: 1,
+                    scale: 1,
+                    rotation: 0,
+                    duration: 0.4,
+                    delay: index * 0.2 + 0.3 + (starIndex * 0.1),
+                    ease: "back.out(1.7)",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%"
+                    }
+                }
+            );
+        });
+
+        // Text reveal animation
+        const text = card.querySelector('p');
+        if (text) {
+            gsap.fromTo(text,
+                {
+                    opacity: 0,
+                    y: 30,
+                    filter: "blur(10px)"
+                },
+                {
+                    opacity: 1,
+                    y: 0,
+                    filter: "blur(0px)",
+                    duration: 1,
+                    delay: index * 0.2 + 0.6,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: card,
+                        start: "top 85%"
+                    }
+                }
+            );
+        }
+    });
+
     // Creative technology cards with spin and scale effects
     gsap.utils.toArray('#technologies .professional-card').forEach((card, index) => {
         const angle = (360 / 8) * index; // Distribute around circle
