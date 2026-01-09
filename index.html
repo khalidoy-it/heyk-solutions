@@ -17,6 +17,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -54,12 +57,6 @@
             }
             body {
                 @apply bg-obsidian text-slate-300 font-sans antialiased;
-            }
-            section {
-                @apply opacity-0 translate-y-8 transition-all duration-1000 ease-out;
-            }
-            section.visible {
-                @apply opacity-100 translate-y-0;
             }
         }
         .cyber-grid {
@@ -317,29 +314,29 @@
 </div>
 </header>
 <main class="relative">
-<section class="visible px-6 pt-24 pb-20 relative text-center" id="hero">
+<section class="px-6 pt-24 pb-20 relative text-center" id="hero">
 <div class="relative z-10 space-y-8">
-<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon-blue/10 border border-neon-blue/20 text-neon-blue text-[11px] font-semibold uppercase tracking-wider mx-auto">
+<div class="hero-badge inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neon-blue/10 border border-neon-blue/20 text-neon-blue text-[11px] font-semibold uppercase tracking-wider mx-auto">
 <span class="relative flex h-2 w-2 items-center justify-center">
 <span class="relative inline-flex rounded-full h-2 w-2 bg-neon-blue blinking-dot" style="box-shadow: 0 0 8px rgba(0, 240, 255, 0.8);"></span>
 </span>
                 Now Partnering for 2026 Projects
             </div>
 <div class="space-y-6">
-<h2 class="text-white text-4xl md:text-6xl font-extrabold leading-[1.1] font-display tracking-tight">
+<h2 class="hero-title text-white text-4xl md:text-6xl font-extrabold leading-[1.1] font-display tracking-tight">
                     Engineering <span class="text-neon-blue">Scalable</span> <br/>
                     Software Solutions
                 </h2>
-<div class="inline-block">
+<div class="hero-subtitle inline-block">
 <p class="text-slate-300 text-base font-mono typing-effect">
                         &gt; Architecture. Development. Scale.
                     </p>
 </div>
-<p class="text-slate-400 text-lg leading-relaxed max-w-xl font-light mx-auto">
+<p class="hero-description text-slate-400 text-lg leading-relaxed max-w-xl font-light mx-auto">
                     Partner with an elite team to build, ship, and scale your next SaaS or enterprise platform. We turn complex technical challenges into competitive business advantages.
                 </p>
 </div>
-<div class="flex flex-col gap-6 pt-4 items-center">
+<div class="hero-buttons flex flex-col gap-6 pt-4 items-center">
 <a href="#contact" class="action-button text-sm uppercase tracking-widest text-center inline-flex items-center justify-center">
                     Start Your Project
                 </a>
@@ -402,7 +399,7 @@
 </div>
 </div>
 </section>
-<section class="visible px-6 py-16 bg-deep-charcoal/60 border-y border-white/10" id="stats">
+<section class="px-6 py-16 bg-deep-charcoal/60 border-y border-white/10" id="stats">
 <div class="max-w-6xl mx-auto">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
 <div class="space-y-2">
@@ -424,7 +421,7 @@
 </div>
 </div>
 </section>
-<section class="visible px-6 py-24 space-y-16" id="services">
+<section class="px-6 py-24 space-y-16" id="services">
 <div class="text-center space-y-4">
 <span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Expertise</span>
 <h2 class="text-white text-3xl font-bold font-display tracking-tight">Our Core Expertise</h2>
@@ -517,7 +514,7 @@
 </div>
 </div>
 </section>
-<section class="visible px-6 py-24" id="portfolio">
+<section class="px-6 py-24" id="portfolio">
 <div class="space-y-12">
 <div class="space-y-4 text-center">
 <span class="text-accent-blue text-xs font-bold uppercase tracking-[0.2em]">Portfolio</span>
@@ -629,7 +626,7 @@
 </div>
 </div>
 </section>
-<section class="visible px-6 py-24 bg-white/[0.08] border-y border-white/10" id="testimonials">
+<section class="px-6 py-24 bg-white/[0.08] border-y border-white/10" id="testimonials">
 <div class="space-y-12">
 <div class="space-y-4 text-center">
 <span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Validation</span>
@@ -730,7 +727,7 @@
 </div>
 </div>
 </section>
-<section class="visible px-6 py-24 bg-deep-charcoal/60 border-y border-white/10" id="technologies">
+<section class="px-6 py-24 bg-deep-charcoal/60 border-y border-white/10" id="technologies">
 <div class="space-y-12 max-w-6xl mx-auto">
 <div class="space-y-4 text-center">
 <span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Technology Stack</span>
@@ -797,7 +794,7 @@
 </div>
 </div>
 </section>
-<section class="visible px-6 py-24" id="process">
+<section class="px-6 py-24" id="process">
 <div class="space-y-12 max-w-5xl mx-auto">
 <div class="space-y-4 text-center">
 <span class="text-accent-blue text-xs font-bold uppercase tracking-[0.2em]">Our Process</span>
@@ -844,7 +841,7 @@
 </div>
 </div>
 </section>
-<section class="visible px-6 py-24 bg-white/[0.08] border-y border-white/10" id="faq">
+<section class="px-6 py-24 bg-white/[0.08] border-y border-white/10" id="faq">
 <div class="space-y-12 max-w-3xl mx-auto">
 <div class="space-y-4 text-center">
 <span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">FAQ</span>
@@ -879,7 +876,7 @@
 </div>
 </div>
 </section>
-<section class="visible px-6 py-24 bg-deep-charcoal/80 relative" id="contact">
+<section class="px-6 py-24 bg-deep-charcoal/80 relative" id="contact">
 <div class="relative z-10 space-y-12">
 <div class="space-y-4 text-center">
 <span class="text-neon-blue text-xs font-bold uppercase tracking-[0.2em]">Inquiry</span>
@@ -968,7 +965,7 @@
 </div>
 </div>
 </footer>
-<section class="visible px-6 py-12 bg-deep-charcoal/80 border-t border-white/10" id="legal">
+<section class="px-6 py-12 bg-deep-charcoal/80 border-t border-white/10" id="legal">
 <div class="max-w-4xl mx-auto">
 <div class="space-y-6">
 <div class="text-center space-y-2">
@@ -1044,19 +1041,19 @@ Notice of Approval of Initial Filing - Approved December 29, 2026
         observer.observe(section);
     });
 
-    // Enhanced smooth scrolling for all anchor links and buttons
+    // Enhanced smooth scrolling for all anchor links and buttons (using GSAP)
     function smoothScrollTo(target) {
         if (!target || target === '#') return;
         
         const element = document.querySelector(target);
         if (element) {
-            const headerOffset = 90; // Height of sticky header
-            const elementPosition = element.offsetTop;
-            const offsetPosition = elementPosition - headerOffset;
-
-            window.scrollTo({
-                top: offsetPosition,
-                behavior: 'smooth'
+            gsap.to(window, {
+                duration: 1.2,
+                scrollTo: {
+                    y: element,
+                    offsetY: 90
+                },
+                ease: "power3.inOut"
             });
         }
     }
